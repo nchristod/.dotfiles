@@ -1,0 +1,7 @@
+[user]
+	name = Christodoulopoulos Nikolaos
+	email = nchristod@gmail.com
+[core]
+	editor = subl
+[color]
+	ui = true

@@ -1,0 +1,51 @@
+pcm.delta44 {
+	type hw
+	card M44
+	device 0
+}
+
+pcm.onboard {
+	type hw
+	card Intel
+	device 0
+}
+
+pcm.headset {
+	type hw
+	card Headset
+	device 0
+}
+
+pcm.camera_mic {
+	type hw
+	card U0x46d0x824
+	device 0
+}
+
+#*************************control section***********************
+
+ctl.delta44 {
+        type hw
+        card M44
+        device 0
+}
+
+ctl.onboard {
+        type hw
+        card Intel
+        device 0
+}
+
+ctl.headset {
+        type hw
+        card Headset
+        device 0
+}
+
+ctl.camera_mic {
+        type hw
+        card U0x46d0x824
+        device 0
+}
+
+
