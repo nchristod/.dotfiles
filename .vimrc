@@ -29,9 +29,9 @@ Plugin 'gmarik/Vundle.vim'
 
 """"""""""""""""""""""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'railscasts'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
@@ -48,14 +48,17 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 "
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ervandew/supertab'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tomtom/tcomment_vim'
+
+Plugin 'valloric/YouCompleteMe'
 
 """""""" All of your Plugins must be added before the following line """""""""""
 call vundle#end()            " required
@@ -73,10 +76,26 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 """"""""""" NERDTree config """"""""""""
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+
+""""""""""" YouCompleteMe """"""""""""""
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:airline#extensions#ycm#enabled = 1 " Airline integration
 
 """"""""""" CTRL-P config """"""""""""""
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|o|dll|class|png|jpg|jpeg)$'
+\}
+
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_root_markers = [
+  \ 'pom.xml', '.p4ignore', '*.sublime-project',
+  \ '*.jucer'
+\]
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 """"""""""" Syntastic config """""""""""
 set statusline+=%#warningmsg#
