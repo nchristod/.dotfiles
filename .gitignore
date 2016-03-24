@@ -3,6 +3,7 @@
 /.vim/undo/*
 /.vim/viminfo
 /bootstrap.sh
+/.vim/bundle/*
 
 # ignore mutt and bashrc for now
 /.mutt
