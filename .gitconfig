@@ -5,3 +5,5 @@
 	editor = subl
 [color]
 	ui = true
+[push]
+	default = simple
