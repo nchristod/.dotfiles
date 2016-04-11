@@ -2,7 +2,7 @@
 	name = Christodoulopoulos Nikolaos
 	email = nchristod@gmail.com
 [core]
-	editor = subl
+	editor = vim
 [color]
 	ui = true
 [push]
