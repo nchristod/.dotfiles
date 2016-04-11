@@ -4,6 +4,7 @@
 /.vim/viminfo
 /bootstrap.sh
 /.vim/bundle/*
+*hist
 
 # ignore mutt and bashrc for now
 /.mutt

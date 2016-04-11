@@ -36,7 +36,7 @@ Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
 Plug 'tomtom/tcomment_vim'
 
-Plug 'valloric/YouCompleteMe'
+Plug 'valloric/YouCompleteMe'", { 'for': ['cpp', 'h', 'cs', 'rs', 'js' ] }
 
 call plug#end()
 " Put your non-Plugin stuff after this line

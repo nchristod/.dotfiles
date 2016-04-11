@@ -47,7 +47,8 @@ let g:ag_working_path_mode="r" " Start searching from the project root instead o
 
 """""""""" Theme - colorscheme """""""""
 set background=dark
-colorscheme railscasts
+" colorscheme railscasts
+colorscheme molokai
 
 """"""""""""" Formating """"""""""""""""
 set tabstop=2 " number of spaces for tab character

@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/drugsha'
-let g:netrw_dirhist_2='/home/drugsha/Workspace'
-let g:netrw_dirhist_3='/home/drugsha/Workspace/Cpp'
-let g:netrw_dirhist_4='/home/drugsha/Workspace/Cpp/Date'
-let g:netrw_dirhist_5='/home/drugsha/Workspace'
