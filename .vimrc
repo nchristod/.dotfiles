@@ -50,6 +50,23 @@ set background=dark
 " colorscheme railscasts
 colorscheme molokai
 
+""""""""""" Clang-Format """"""""""""""
+let g:clang_format#command = "clang-format-3.7"
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "UseTab" : "Never",
+            \ "IndentWidth" : 4,
+            \ "BreakBeforeBraces" : "Allman",
+            \ "IndentCaseLabels" : "false",
+            \ "ColumnLimit" : 100}
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
 """"""""""""" Formating """"""""""""""""
 set tabstop=2 " number of spaces for tab character
 set softtabstop=4 " number of spaces when tabbing
@@ -123,6 +140,9 @@ endif
 set splitbelow
 set splitright
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 " From Thoughtbot dotfiles
 augroup vimrcEx
   autocmd!
@@ -155,5 +175,5 @@ augroup END
 
 " Fonts
 if has('gui_running')
-  set guifont=Literation\ Mono\ Powerline\ 10
+  set guifont=Literation\ Mono\ Powerline\ 8
 endif

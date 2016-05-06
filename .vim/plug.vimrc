@@ -37,6 +37,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tomtom/tcomment_vim'
 
 Plug 'valloric/YouCompleteMe'", { 'for': ['cpp', 'h', 'cs', 'rs', 'js' ] }
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 " Put your non-Plugin stuff after this line
+
