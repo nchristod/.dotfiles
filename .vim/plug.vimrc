@@ -6,38 +6,48 @@ endif
 
 call plug#begin('~/.vim/bundle')
 """"""""""""""""""""""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
+" Generics
 " Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'railscasts'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rake'
-Plug 'vim-ruby/vim-ruby'
-Plug 'airblade/vim-gitgutter'
-Plug 'skalnik/vim-vroom'
 Plug 'rking/ag.vim'
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-" Snippets collection
-Plug 'honza/vim-snippets'
-
-"
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
+Plug 'tomtom/tcomment_vim'
+Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ervandew/supertab'
 Plug 'easymotion/vim-easymotion'
-Plug 'tomtom/tcomment_vim'
 
+" Git integration
+" Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+
+" Snippets collection
+" Plug 'garbas/vim-snipmate' " VimL only
+Plug 'sirver/ultisnips' " Requires Python
+Plug 'honza/vim-snippets'
+
+" Styling Plugins
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'railscasts'
+Plug 'tomasr/molokai'
+
+" C++ specific
 Plug 'valloric/YouCompleteMe'", { 'for': ['cpp', 'h', 'cs', 'rs', 'js' ] }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'rhysd/vim-clang-format'
+Plug 'DoxygenToolkit.vim'
+
+" Ruby specifics
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rake'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'skalnik/vim-vroom'
 
 call plug#end()
 " Put your non-Plugin stuff after this line

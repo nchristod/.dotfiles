@@ -9,6 +9,33 @@ source ~/.vim/plug.vimrc
 """"""""""" YouCompleteMe """"""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:airline#extensions#ycm#enabled = 1 " Airline integration
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+""""""""""""" UltiSnips """"""""""""""""
+set runtimepath+=~/.vim/mySnippets/
+let g:UltiSnipsEditSplit="vertical"
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+
+""""""""""" Doxygen ToolKit """"""""""""
+" let g:DoxygenToolkit_briefTag_pre="@Synopsis    "
+" let g:DoxygenToolkit_paramTag_pre="@Param    "
+" let g:DoxygenToolkit_returnTag="@Returns    "
+" let g:DoxygenToolkit_blockHeader="============================================="
+" let g:DoxygenToolkit_blockFooter="============================================="
+let g:DoxygenToolkit_authorName=
+    \ "Christodoulopoulos Nikolaos (nchristod)"
+let g:DoxygenToolkit_licenceTag="MIT"
+" Doxygen syntax auto enable for C, C++, c#, IDL, PHP
+let g:load_doxygen_syntax=1
 
 """"""""""" CTRL-P config """"""""""""""
 let g:ctrlp_show_hidden = 1
