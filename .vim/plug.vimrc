@@ -35,6 +35,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'railscasts'
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 " C++ specific
 Plug 'valloric/YouCompleteMe'", { 'for': ['cpp', 'h', 'cs', 'rs', 'js' ] }
