@@ -247,7 +247,7 @@ ${top_mem name 3}${goto 60}${goto 100}${top_mem mem 3}%${goto 155}${top name 3}$
 #${top_mem mem_res 3}
 
 ${font Sans:bold:size=8.25}${color4}NETWORK  ${color3}${hr 2}${font}
-${voffset 2}#${color2}Public IP${alignr}${execi 1800 curl ifconfig.me}
+${voffset 2}${color2}Public IP${alignr}${execi 1800 curl ifconfig.co}
 Private IP${alignr}${addr wlan0}${goto 150}
 ${font PizzaDude Bullets:size=9.5}${color1}U${font}${color2} Download${goto 103}${totaldown wlan0}${goto 150}${font PizzaDudeBullets:size=9.5}${color1}T${font}${color2} Down${alignr}${downspeed wlan0}
 ${font PizzaDudeBullets:size=9.5}${color1}O${font}${color2} Upload${goto 100}${totalup wlan0}${goto 150}${font PizzaDudeBullets:size=9.5}${color1}N${font}${color2} Up${alignr}${upspeed wlan0}
