@@ -1,0 +1,42 @@
+snippet doctitle "Boilerplate Metadata"
+/******************************************************************************/
+ *
+ *        File: ${1:`!v expand('%')`}
+ *
+ * Description: $2
+ *
+ *     Authors: ${3:`git config --get user.name`}
+ *
+ * Last-Edited: ${4:`date +%Y-%m-%d`}
+ *
+ ******************************************************************************/
+endsnippet
+
+snippet doxhead "Boilerplate c++ header"
+/*
+ * =====================================================================================
+ *
+ *       Filename:  `!p snip.rv = fn`
+ *
+ *    Description:  ${1:<brief file purpose>}
+ *
+ *       @version:  ${2:1.0}
+ *        Created:  `!v strftime("%Y-%m-%d")`
+ *
+ *      @author:  ${3:`git config --get user.name`}
+ *
+ *  Last-Revision:  ${4:`!v datetime`}
+ *
+ * =====================================================================================
+ */
+endsnippet
+
+
+snippet doxfun "Description" b
+/**
+    @brief ${1:<brief description>}
+
+    @param $2
+    @return $3
+*/
+endsnippet

@@ -3,6 +3,7 @@
 	email = nchristod@gmail.com
 [core]
 	editor = vim
+	autocrlf = input
 [color]
 	ui = true
 [push]
