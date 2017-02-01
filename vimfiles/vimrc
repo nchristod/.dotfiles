@@ -104,17 +104,26 @@ set background=dark
 colorscheme gruvbox
 
 """"""""""" Clang-Format """"""""""""""
-let g:clang_format#command = "clang-format-3.7"
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "false",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11",
-            \ "UseTab" : "Never",
-            \ "IndentWidth" : 4,
-            \ "BreakBeforeBraces" : "Allman",
-            \ "IndentCaseLabels" : "false",
-            \ "ColumnLimit" : 100}
+let g:clang_format#command = "clang-format-3.8"
+" let g:clang_format#code_style = "webkit"
+" let g:clang_format#style_options = {
+"             \ "Language": "Cpp",
+"             \ "AlignAfterOpenBracket": "Align",
+"             \ "AccessModifierOffset" : -4,
+"             \ "AllowShortIfStatementsOnASingleLine" : "false",
+"             \ "AlwaysBreakTemplateDeclarations" : "true",
+"             \ "BreakBeforeBinaryOperators": "true",
+"             \ "BreakBeforeTernaryOperators": "true",
+"             \ "Standard" : "C++11",
+"             \ "UseTab" : "Never",
+"             \ "IndentWidth" : 4,
+"             \ "BreakBeforeBraces" : "Allman",
+"             \ "IndentCaseLabels" : "false",
+"             \ "ColumnLimit" : 100,
+"             \ "PointerAlignment": "Left",
+" }
+"
+let g:clang_format#detect_style_file = 1
 
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+echo -e "$(tput setaf 2)-----------------"
+echo -e "Bootstraping Dotfiles."
+echo -e "-----------------$(tput sgr0)\n"
+
+
 echo "Linking Bash configs.."
 ln -sv ~/.dotfiles/bash/profile ~/.profile
 ln -sv ~/.dotfiles/bash/bash_profile ~/.bash_profile
@@ -23,3 +28,46 @@ echo "Linking misc files.."
 ln -nsv ~/.dotfiles/fonts ~/.fonts
 ln -sv ~/.dotfiles/TBox.conkyrc ~/.config/conky/TBox.conkyrc
 ln -sv ~/.dotfiles/cpu_tbox.lua ~/.config/conky/LUA/cpu_tbox.lua
+
+# source the new setup
+source ~/.bashrc
+
+echo -e "\n$(tput setaf 2)-----------------"
+echo -e "Installing packages."
+echo -e "-----------------$(tput sgr0)\n"
+
+sudo -v # ask admin password upfront
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+if [[ $(which apt-get) == "" ]]; then
+    echo -e "$(tput setaf 1)[Error]:$(tput sgr0) Aptitude doesn't seem present."
+    echo -e "         Only Debian systems supported."
+    exit 1
+fi
+
+sudo apt-get update && sudo apt-get upgrade
+
+sudo apt-get install -y coreutils
+sudo apt-get install -y findutils
+sudo apt-get install -y binutils
+sudo apt-get install -y build-essential
+
+sudo apt-get install -y bash-completion
+
+sudo apt-get install -y python
+sudo apt-get install -y python3
+
+
+sudo apt-get install -y vim
+sudo apt-get install -y vim-gtk
+
+sudo apt-get install -y silversearcher-ag
+sudo apt-get install -y imagemagick
+
+
+# RVM with ruby
+curl -sSL https://get.rvm.io | bash -s stable --ruby --ignore-dotfiles --with-gems="pry, rake"
+
+source ~/.rvm/scripts/rvm

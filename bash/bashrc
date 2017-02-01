@@ -67,15 +67,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/bin/apache-ant-1.9.6/bin:$HOME/bin/Qt5.5.1/5.5/gcc_64/bin:$HOME/bin/android-sdk-linux/tools:$HOME/bin/android-sdk-linux/platform-tools"
 export ANT_HOME="$PATH:$HOME/bin/apache-ant-1.9.6"
 export ANDROID_HOME="/home/drugsha/bin/android-sdk-linux"
-
-
-# BEGIN Ruboto setup
-source ~/.rubotorc
-# END Ruboto setup
 
 # Enable 256 colors for terminal
 export TERM=xterm-256color
@@ -85,3 +79,11 @@ export PATH="/home/drugsha/anaconda2/bin:$PATH"
 
 # fix CURL certificates path
 export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
+# TexLive
+export PATH=/usr/local/texlive/2016/bin/x86_64-linux:$PATH
+
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+
+OCLINT_HOME=~/bin/oclint-0.11
+export PATH=$OCLINT_HOME/bin:$PATH
