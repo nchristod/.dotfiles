@@ -226,6 +226,7 @@ ${font StyleBats:size=10}${color1}${voffset -1}${font}${color2} ${freq_g 1} GHz 
 
 ${font Sans:bold:size=8.25}${color4}MEMORY  ${color3}${hr 2}
 ${voffset 2}${font StyleBats:size=10}${color1}${voffset -2}${font}${color2} RAM${goto 97}${mem}${goto 133}/ ${memmax}${alignr}${memperc}% Used
+${voffset 2}${font StyleBats:size=10}${color1}${voffset -2}${font}${color2} SWAP${goto 97}${swap}${goto 133}/ ${swapmax}${alignr}${swapperc}% Used
 
 ${font Sans:bold:size=8.25}${color4}CPU and FANS  ${color3}${hr 2}${font}
 ${voffset 2}${font StyleBats:size=10}${color1}o${voffset -1}${font}${color2} CPU1 temp ${alignr}${execi 1 sensors | grep 'Core 0' | cut -c 17-21} °C
