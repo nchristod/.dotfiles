@@ -42,7 +42,7 @@ Plug 'valloric/YouCompleteMe'", {'do': './install.py --clang-completer', 'for': 
 " , 'cs', 'rs', 'js' ] }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'rhysd/vim-clang-format'
-Plug 'DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " Ruby specifics
 " Plug 'tpope/vim-rails'

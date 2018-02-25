@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set backspace=indent,eol,start
 
 " Include Vim-Plug's manager config
 source ~/.vim/plug.vimrc
@@ -7,7 +8,6 @@ source ~/.vim/plug.vimrc
 " map <C-n> :NERDTreeToggle<CR>
 
 """"""""""" YouCompleteMe """"""""""""""
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:airline#extensions#ycm#enabled = 1 " Airline integration
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -30,7 +30,8 @@ let g:ycm_collect_identifiers_from_tags_files = 0 "default 0
 let g:ycm_path_to_python_interpreter = '' "default ''
 
 let g:ycm_server_use_vim_stdout = 0 "default 0 (logging to console)
-let g:ycm_server_log_level = 'info' "default info
+let g:ycm_server_log_level = 'debug' "default info
+let g:ycm_keep_logfiles = 1
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
 let g:ycm_confirm_extra_conf = 1
@@ -40,6 +41,7 @@ let g:ycm_filetype_whitelist = { '*': 1 }
 let g:ycm_key_invoke_completion = '<C-Space>'
 
 nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
+nnoremap <F12> :YcmCompleter FixIt <CR>
 
 """"""""""""" UltiSnips """"""""""""""""
 set runtimepath+=~/.vim/mySnippets/
@@ -104,7 +106,7 @@ set background=dark
 colorscheme gruvbox
 
 """"""""""" Clang-Format """"""""""""""
-let g:clang_format#command = "clang-format-3.8"
+let g:clang_format#command = "clang-format-5.0"
 " let g:clang_format#code_style = "webkit"
 " let g:clang_format#style_options = {
 "             \ "Language": "Cpp",
@@ -130,12 +132,15 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 """"""""""""" Formating """"""""""""""""
-set tabstop=2 " number of spaces for tab character
-set softtabstop=4 " number of spaces when tabbing
-set shiftwidth=2
+set tabstop=2 " number of spaces for tab character display
+set softtabstop=2 " number of spaces inserted when tabbing
+set shiftwidth=2 " number of space characters when indenting
 set autoindent
 set smarttab
 set expandtab " turns tab to spaces
+
+" cpp, javascript, coffeescript 4 space tab
+autocmd FileType c,cpp,objc,javascript,coffeescript setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 autocmd FileType make setlocal noexpandtab " revert to tabs for Makefiles
 
