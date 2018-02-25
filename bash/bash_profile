@@ -6,3 +6,5 @@
 
 # Add RVM autocompletion
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+export PATH="$HOME/.cargo/bin:$PATH"
