@@ -23,6 +23,9 @@ ln -nsv ~/.dotfiles/vimfiles/vim ~/.vim
 ln -sv ~/.dotfiles/vimfiles/vimrc ~/.vimrc
 ln -sv ~/.dotfiles/vimfiles/gvimrc ~/.gvimrc
 
+echo "Linking xmonad configs"
+ln -nsv ~/.dotfiles/xmonad ~/.xmonad
+
 echo "Linking misc files.."
 #ln -sv ~/.dotfiles/gdbinit ~/.gdbinit
 ln -nsv ~/.dotfiles/fonts ~/.fonts

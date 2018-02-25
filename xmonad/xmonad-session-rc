@@ -1,0 +1,29 @@
+# this is sourced by lightdm's (?) startup script
+# /usr/bin/xmonad-session which in turn is declared
+# to run for the xsession in /usr/share/xsessions/xmonad.desktop
+
+# set the system beep off
+xset b off
+
+# Keyboard settings
+# 250 ms delay and 25 chars per second repeat rate
+xset r rate 250 25
+
+# Disable capslock
+setxkbmap -option ctrl:nocaps
+
+## TOUCHPAD
+synclient VertEdgeScroll=1 HorizEdgeScroll=1 TapButton1=1 TapButton2=3 TapButton3=2 2>/dev/null
+# disable it while typing
+syndaemon -i .5 -K -t -R -d &
+
+##
+
+# GNOME PolicyKit authentication
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# set the wallpaper
+nitrogen --restore
+
+~/.screenlayout/dual.sh
+xmonad
