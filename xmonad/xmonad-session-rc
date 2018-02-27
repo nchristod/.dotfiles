@@ -25,5 +25,9 @@ syndaemon -i .5 -K -t -R -d &
 # set the wallpaper
 nitrogen --restore
 
+# check and setup second monitor
 ~/.screenlayout/dual.sh
+
+dropbox.py start &
+
 xmonad
