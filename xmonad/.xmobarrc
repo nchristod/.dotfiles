@@ -11,7 +11,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%StdinReader% }{ %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% | %RJTT% | %date% || %kbd% "
+   , template = "%StdinReader% }{ %battery% | %multicpu% | %coretemp% | %memory% %swap% | %dynnetwork% | %date% || %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -38,10 +38,6 @@ Config {
    , commands =
         -- Capture Input from Xmonad
         [ Run StdinReader
-
-        -- weather monitor
-        , Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
-                             ] 36000
 
         -- network activity monitor (dynamic interface resolution)
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
@@ -72,13 +68,21 @@ Config {
                              ] 50
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+        , Run Memory         [ "--template" , "Mem: <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
                              , "--low"      , "darkgreen"
                              , "--normal"   , "darkorange"
                              , "--high"     , "darkred"
                              ] 10
+        -- swap usage monitor
+        , Run Swap          [ "template"    , "Swp: <usedratio>%"
+                            , "--Low"       , "10"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "darkred"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkgreen"
+                            ] 10
 
         -- battery monitor
         , Run Battery        [ "--template" , "Batt: <acstatus>"
@@ -109,3 +113,4 @@ Config {
    }
 
 -- vi: syntax=haskell
+

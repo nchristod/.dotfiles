@@ -11,6 +11,7 @@ main = do
       { manageHook = manageDocks <+> manageHook def
       , layoutHook = avoidStruts  $  layoutHook def
       , modMask = mod4Mask -- Mod is Super Key
+      , handleEventHook = handleEventHook def <+> docksEventHook
       , logHook = dynamicLogWithPP xmobarPP
                       { ppOutput = hPutStrLn xmproc
                       , ppTitle = xmobarColor "green" "" . shorten 50
