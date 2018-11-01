@@ -1,10 +1,14 @@
 /*/vim/backup/*
 /*/vim/swap/*
 /*/vim/undo/*
-/*/vim/viminfo
+/*/vim/viminf*
 /bootstrap.sh
 /*/vim/bundle/*
 *hist
 
 # ignore mutt for now
 /.mutt
+
+# haskell objects
+*.hi
+*.o
