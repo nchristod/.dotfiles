@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 set backspace=indent,eol,start
+" set termguicolors
 
 " Include Vim-Plug's manager config
 source ~/.vim/plug.vimrc
@@ -42,6 +43,9 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 
 nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 nnoremap <F12> :YcmCompleter FixIt <CR>
+nnoremap <Leader><jd> :YcmCompleter GoTo <CR>
+" nnoremap <Leader><jgg> :YcmCompleter GoToImprecise <CR>
+" nnoremap <Leader><jh> :YcmCompleter GoToInclude <CR>
 
 """"""""""""" UltiSnips """"""""""""""""
 set runtimepath+=~/.vim/mySnippets/
@@ -101,7 +105,6 @@ let g:ag_working_path_mode="r" " Start searching from the project root instead o
 
 """""""""" Theme - colorscheme """""""""
 set background=dark
-" colorscheme railscasts
 " colorscheme molokai
 colorscheme gruvbox
 

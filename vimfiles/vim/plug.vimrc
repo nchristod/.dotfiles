@@ -38,7 +38,7 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 
 " C++ specific
-Plug 'valloric/YouCompleteMe'", {'do': './install.py --clang-completer', 'for': ['cpp', 'h'] }
+Plug 'valloric/YouCompleteMe'", {'do': './install.py --ninja --clang-completer', 'for': ['cpp', 'h'] }
 " , 'cs', 'rs', 'js' ] }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'rhysd/vim-clang-format'
